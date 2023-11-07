@@ -1,112 +1,167 @@
 body {
-    background-color: #f2f8fa;
-    font-family: 'Roboto', Helvetica, sans-serif;
-    margin: 0; 
-  }
-  
-  
+  background-color: #f2f8fa;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  margin: 0; 
+}
+
 /* Style the top navigation bar */
 .navbar {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  /*burger*/
-  .menu-icon {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;  
-    height: 24px;
-    width: 100%;
-  }
-  
-  .menu-icon span {
-    display: block;
-    height: 2px;
-    width: 24px;
-    background-color: black;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  .link {
-    margin: 0 40px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
 
-  
-  h1 {
-    padding-top: 30px;
-    text-align: center;
-    font-size: 60px;
-    margin-top: 0;
-  }
-  
-  p {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 0;
-    padding: 0 40px;
-  }
-  
-  .presentation-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-    
-  .project {
+/*burger*/
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;  
+  height: 24px;
+  width: 100%;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 24px;
+  background-color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.link {
+  margin: 0 40px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+  padding: 0 40px;
+}
+
+.presentation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project {
+  position: relative;
   width: 25%;
   margin: 2%;
   text-align: center;
-  }
-  
-  .project img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform .2s ease-in-out;
-  }
-  
-  .project img:hover {
-    transform: scale(1.05);
-  }
-  
-  .project p {
-    margin-top: 10px;
-    font-size: 18px;
-  }
-  
-  /* Mobile friendly */
-  @media screen and (max-width: 715px) {
-    .navbar ul {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform .2s ease-in-out;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+}
+
+.project-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  background: rgba(0,0,0,0.5); /* Semi-transparent overlay */
+  color: white; 
+  opacity: 0; /* Start with hidden description */
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;
+  justify-content: center;
+  transition: opacity .3s;
+  border-radius: 8px;
+  padding: 10px; 
+}
+
+.project img:hover + .project-description, 
+.project-description:hover {
+  opacity: 1; /* Show the description on hover */
+}
+
+.project-description p {
+  margin: 0; 
+  font-size: 18px; 
+}
+
+.project-links {
+  margin-top: 20px;
+}
+
+.project-site-btn, .github-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #ffffff; 
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color .3s;
+}
+
+.project-site-btn:hover, .github-btn:hover {
+  background-color: #f2f8fa; 
+}
+
+.project p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Mobile friendly */
+@media screen and (max-width: 715px) {
+  .navbar ul {
       display: none;
-    }
-    .navbar ul.show {
+  }
+  .navbar ul.show {
       display: block;
-    }
-    .menu-icon {
+  }
+  .menu-icon {
       display: flex;
-    }
-    section {
+  }
+  section {
       padding: 20px;
-    }
-    .project {
+  }
+  .project {
       width: 100%;
       margin: 5% 0;
-    }
   }
+  .project-description, .project-site-btn, .github-btn {
+      /* Ensure buttons are visible and stack vertically on mobile */
+      opacity: 1;
+      flex-direction: column;
+      text-align: center;
+  }
+}
