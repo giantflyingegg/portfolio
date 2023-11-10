@@ -86,6 +86,7 @@ p {
 
 .project {
   position: relative;
+  width: 25%;
   margin: 2%;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -106,7 +107,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 60px;
+  bottom: 22%;
   background: rgba(0,0,0,0.5); /* Semi-transparent overlay */
   color: white; 
   opacity: 0; /* Start with hidden description */
@@ -130,7 +131,11 @@ p {
 }
 
 .project-links {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  min-width: 0; 
 }
 
 .project-site-btn, .github-btn {
